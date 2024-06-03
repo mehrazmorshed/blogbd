@@ -1,12 +1,12 @@
 <?php
 /**
- * Template Parts for Bloggy theme.
+ * Template Parts for BlogX theme.
  *
- * @package     Bloggy
+ * @package     BlogX
  * @author      Mehraz Morshed
  * @copyright   Copyright (c) 2020, Mehraz Morshed
  * @link        https://mehrazmorshed.com
- * @since       Bloggy 1.0
+ * @since       BlogX 1.0
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -19,11 +19,11 @@
         endif;
 
         if ( has_post_thumbnail() ) {
-            the_post_thumbnail( 'bloggy-featured', array( 'class' => 'featured-image' ) );
+            the_post_thumbnail( 'blogx-featured', array( 'class' => 'featured-image' ) );
         }
         ?>
         <div class="entry-meta">
-            <?php bloggy_posted_on(); ?>
+            <?php blogx_posted_on(); ?>
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
 
@@ -31,20 +31,20 @@
         <?php
         the_content( sprintf(
             wp_kses(
-                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bloggy' ),
+                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blogx' ),
                 array( 'span' => array( 'class' => array() ) )
             ),
             get_the_title()
         ) );
 
         wp_link_pages( array(
-            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bloggy' ),
+            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blogx' ),
             'after'  => '</div>',
         ) );
         ?>
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
-        <?php bloggy_entry_footer(); ?>
+        <?php blogx_entry_footer(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
