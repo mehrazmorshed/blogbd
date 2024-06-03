@@ -1,13 +1,21 @@
 /*
 Theme Name: Bloggy
-Theme URI: http://example.com/bloggy
-Author: Your Name
-Author URI: http://example.com
+Theme URI: https://wordpress.org/themes/bloggy/
+Author: Mehraz Morshed
+Author URI: https://profiles.wordpress.org/mehrazmorshed/
 Description: A simple and elegant blog theme.
 Version: 1.0
+Requires at least: 5.3
+Tested up to: 6.5
+Requires PHP: 5.3
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bloggy
+Domain Path: /languages
+Tags: custom-menu, custom-logo, entertainment, one-column, two-columns, right-sidebar, custom-colors, editor-style, featured-images, full-width-template, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready, blog
+
+Screenshot image is a collage of actual sites created using the Bloggy WordPress Theme.
+
 */
 
 body {
@@ -111,6 +119,7 @@ header.site-header .site-description {
     margin: 20px 0;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-right: 20px;
 }
 
 .widget-area .widget {
