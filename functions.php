@@ -1,4 +1,28 @@
 <?php
+/**
+ * Bloggy functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package Bloggy
+ * @since 1.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly.
+}
+
+/**
+ * Define Constants
+ */
+define( 'BLOGGY_THEME_VERSION', '1.0' );
+define( 'BLOGGY_THEME_SETTINGS', 'bloggy-settings' );
+define( 'BLOGGY_THEME_DIR', trailingslashit( get_template_directory() ) );
+define( 'BLOGGY_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
+
+/**
+ * Register necessary features
+ */
 if ( ! function_exists( 'bloggy_setup' ) ) :
     function bloggy_setup() {
         load_theme_textdomain( 'bloggy', get_template_directory() . '/languages' );
@@ -24,11 +48,17 @@ if ( ! function_exists( 'bloggy_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'bloggy_setup' );
 
+/**
+ * Define content width
+ */
 function bloggy_content_width() {
     $GLOBALS['content_width'] = apply_filters( 'bloggy_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'bloggy_content_width', 0 );
 
+/**
+ * Register Sidebar  and Initialize Widgets
+ */
 function bloggy_widgets_init() {
     register_sidebar( array(
         'name'          => esc_html__( 'Sidebar', 'bloggy' ),
@@ -42,43 +72,28 @@ function bloggy_widgets_init() {
 }
 add_action( 'widgets_init', 'bloggy_widgets_init' );
 
+/**
+ * Enqueue css and js files
+ */
 function bloggy_scripts() {
     wp_enqueue_style( 'bloggy-style', get_stylesheet_uri() );
-    wp_enqueue_script( 'bloggy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+    wp_enqueue_script( 'bloggy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'bloggy_scripts' );
 
+/**
+ * Set default thumbnail size
+ */
+set_post_thumbnail_size( 1200, 9999 ); // Unlimited height, soft crop
+
+/**
+ * Define custom thumbnail sizes
+ */
+add_image_size( 'bloggy-featured', 800, 400, true ); // 800 pixels wide by 400 pixels tall, hard crop mode
+
+/**
+ * Required files
+ */
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/sanitize.php';
-
-
-
-
-
-// Enable support for Post Thumbnails
-add_theme_support( 'post-thumbnails' );
-
-// Set default thumbnail size
-set_post_thumbnail_size( 1200, 9999 ); // Unlimited height, soft crop
-
-// Define custom thumbnail sizes
-add_image_size( 'bloggy-featured', 800, 400, true ); // 800 pixels wide by 400 pixels tall, hard crop mode
-
-
-
-
-
-
-
-
-
-// Enqueue theme scripts
-function bloggy_enqueue_scripts() {
-    wp_enqueue_script( 'bloggy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
-}
-add_action( 'wp_enqueue_scripts', 'bloggy_enqueue_scripts' );
-
-
-
-?>
