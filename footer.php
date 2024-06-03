@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package BlogX
+ * @package BlogBD
  * @since 1.0
  */
 
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <footer id="colophon" class="site-footer">
         <div class="site-info">
             <?php
-            printf( esc_html__( 'Proudly powered by %s', 'blogx' ), '<a href="' . esc_url( __( 'https://wordpress.org/', 'blogx' ) ) . '">WordPress</a>' );
+            printf( esc_html__( 'Proudly powered by %s', 'blogbd' ), '<a href="' . esc_url( __( 'https://wordpress.org/', 'blogbd' ) ) . '">WordPress</a>' );
             ?>
         </div><!-- .site-info -->
     </footer><!-- #colophon -->

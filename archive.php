@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package BlogX
+ * @package BlogBD
  * @since 1.0
  */
 

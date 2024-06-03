@@ -1,12 +1,12 @@
 <?php
 /**
- * Template Parts for BlogX theme.
+ * Template Parts for BlogBD theme.
  *
- * @package     BlogX
+ * @package     BlogBD
  * @author      Mehraz Morshed
  * @copyright   Copyright (c) 2020, Mehraz Morshed
  * @link        https://mehrazmorshed.com
- * @since       BlogX 1.0
+ * @since       BlogBD 1.0
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -19,11 +19,11 @@
         endif;
 
         if ( has_post_thumbnail() ) {
-            the_post_thumbnail( 'blogx-featured', array( 'class' => 'featured-image' ) );
+            the_post_thumbnail( 'blogbd-featured', array( 'class' => 'featured-image' ) );
         }
         ?>
         <div class="entry-meta">
-            <?php blogx_posted_on(); ?>
+            <?php blogbd_posted_on(); ?>
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
 
@@ -31,20 +31,20 @@
         <?php
         the_content( sprintf(
             wp_kses(
-                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blogx' ),
+                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'blogbd' ),
                 array( 'span' => array( 'class' => array() ) )
             ),
             get_the_title()
         ) );
 
         wp_link_pages( array(
-            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blogx' ),
+            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blogbd' ),
             'after'  => '</div>',
         ) );
         ?>
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
-        <?php blogx_entry_footer(); ?>
+        <?php blogbd_entry_footer(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

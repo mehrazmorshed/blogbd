@@ -1,12 +1,12 @@
 <?php
 /**
- * Template Parts for BlogX theme.
+ * Template Parts for BlogBD theme.
  *
- * @package     BlogX
+ * @package     BlogBD
  * @author      Mehraz Morshed
  * @copyright   Copyright (c) 2020, Mehraz Morshed
  * @link        https://mehrazmorshed.com
- * @since       BlogX 1.0
+ * @since       BlogBD 1.0
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,8 +14,8 @@
         <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         <div class="entry-meta">
             <?php
-            blogx_posted_on();
-            blogx_posted_by();
+            blogbd_posted_on();
+            blogbd_posted_by();
             ?>
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
@@ -23,13 +23,13 @@
         <?php
         the_content();
         wp_link_pages( array(
-            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blogx' ),
+            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'blogbd' ),
             'after'  => '</div>',
         ) );
         ?>
     </div><!-- .entry-content -->
     <footer class="entry-footer">
-        <?php blogx_entry_footer(); ?>
+        <?php blogbd_entry_footer(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php

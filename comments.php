@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package BlogX
+ * @package BlogBD
  * @since 1.0
  */
 
@@ -29,7 +29,7 @@ if ( post_password_required() ) {
         <h2 class="comments-title">
             <?php
             printf( 
-                esc_html( _nx( 'One comment', '%1$s comments', get_comments_number(), 'comments title', 'blogx' ) ),
+                esc_html( _nx( 'One comment', '%1$s comments', get_comments_number(), 'comments title', 'blogbd' ) ),
                 number_format_i18n( get_comments_number() )
             );
             ?>
@@ -47,7 +47,7 @@ if ( post_password_required() ) {
     <?php
     if ( ! comments_open() && get_comments_number() ) :
     ?>
-        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'blogx' ); ?></p>
+        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'blogbd' ); ?></p>
     <?php endif; ?>
     <?php comment_form(); ?>
 </div><!-- #comments -->

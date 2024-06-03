@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package BlogX
+ * @package BlogBD
  * @since 1.0
  */
 
