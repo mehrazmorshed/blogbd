@@ -1,3 +1,14 @@
+<?php
+/**
+ * Template Parts for Bloggy theme.
+ *
+ * @package     Bloggy
+ * @author      Mehraz Morshed
+ * @copyright   Copyright (c) 2020, Mehraz Morshed
+ * @link        https://mehrazmorshed.com
+ * @since       Bloggy 1.0
+ */
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

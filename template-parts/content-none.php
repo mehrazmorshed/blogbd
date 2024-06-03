@@ -1,3 +1,14 @@
+<?php
+/**
+ * Template Parts for Bloggy theme.
+ *
+ * @package     Bloggy
+ * @author      Mehraz Morshed
+ * @copyright   Copyright (c) 2020, Mehraz Morshed
+ * @link        https://mehrazmorshed.com
+ * @since       Bloggy 1.0
+ */
+?>
 <section class="no-results not-found">
     <header class="page-header">
         <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'bloggy' ); ?></h1>

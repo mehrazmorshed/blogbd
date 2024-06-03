@@ -1,4 +1,15 @@
 <?php
+/**
+ * Template Tags for Bloggy theme.
+ *
+ * @package     Bloggy
+ * @author      Mehraz Morshed
+ * @copyright   Copyright (c) 2020, Mehraz Morshed
+ * @link        https://mehrazmorshed.com
+ * @since       Bloggy 1.0
+ */
+
+
 if ( ! function_exists( 'bloggy_posted_on' ) ) :
     function bloggy_posted_on() {
         $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';

@@ -1,4 +1,14 @@
 <?php
+/**
+ * Sanitizer for Bloggy theme.
+ *
+ * @package     Bloggy
+ * @author      Mehraz Morshed
+ * @copyright   Copyright (c) 2020, Mehraz Morshed
+ * @link        https://mehrazmorshed.com
+ * @since       Bloggy 1.0
+ */
+
 function bloggy_sanitize_text( $input ) {
     return sanitize_text_field( $input );
 }

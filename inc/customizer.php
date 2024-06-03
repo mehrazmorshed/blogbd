@@ -1,4 +1,15 @@
 <?php
+/**
+ * Customizer for Bloggy theme.
+ *
+ * @package     Bloggy
+ * @author      Mehraz Morshed
+ * @copyright   Copyright (c) 2020, Mehraz Morshed
+ * @link        https://mehrazmorshed.com
+ * @since       Bloggy 1.0
+ */
+
+
 function bloggy_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'bloggy_link_color' , array(
         'default'   => '#0073aa',

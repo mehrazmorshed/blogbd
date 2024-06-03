@@ -1,3 +1,14 @@
+<?php
+/**
+ * Search Form for Bloggy theme.
+ *
+ * @package     Bloggy
+ * @author      Mehraz Morshed
+ * @copyright   Copyright (c) 2020, Mehraz Morshed
+ * @link        https://mehrazmorshed.com
+ * @since       Bloggy 1.0
+ */
+?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
     <label>
         <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'bloggy' ); ?></span>

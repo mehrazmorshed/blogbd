@@ -36,12 +36,17 @@ a:hover {
     color: #005177;
 }
 
+
+
 /* Header Styles */
 header.site-header {
     background-color: #0073aa;
     color: #fff;
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header.site-header h1 {
@@ -57,6 +62,101 @@ header.site-header .site-description {
     font-size: 16px;
     color: #eee;
 }
+
+.site-branding {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.site-title a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-description {
+    margin: 0;
+    font-size: 16px;
+    color: #eee;
+}
+
+/* Navigation Menu Styles */
+.main-navigation {
+    display: flex;
+    justify-content: center;
+    background-color: #005177;
+    width: 100%;
+}
+
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-navigation li {
+    margin: 0;
+}
+
+.main-navigation a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.main-navigation a:hover {
+    background-color: #003b5c;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Responsive Navigation Menu */
+@media (max-width: 768px) {
+    .main-navigation {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+    }
+
+    .main-navigation a {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        background-color: #0073aa;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .main-navigation.toggled .menu-toggle {
+        background-color: #003b5c;
+    }
+
+    .main-navigation.toggled ul {
+        display: block;
+    }
+}
+
+/* Contents */
 
 .site-content {
     display: flex;
@@ -258,113 +358,59 @@ input[type="submit"]:hover {
 
 
 
-
-
-
-
-
-
-
-/* Header Styles */
-header.site-header {
-    background-color: #0073aa;
-    color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.site-branding {
+/* Archive Page Styles */
+/*
+.page-header {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.site-title {
-    margin: 0;
-    font-size: 36px;
-    font-weight: 700;
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
 }
 
-.site-title a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.site-description {
-    margin: 0;
+.archive-description {
     font-size: 16px;
-    color: #eee;
+    color: #777;
+    margin-top: 10px;
 }
 
-/* Navigation Menu Styles */
-.main-navigation {
+.archive .site-main {
     display: flex;
-    justify-content: center;
-    background-color: #005177;
-    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.main-navigation ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+.archive .post {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px); /* Three columns layout */
 }
-
-.main-navigation li {
-    margin: 0;
-}
-
-.main-navigation a {
-    display: block;
-    padding: 10px 20px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.main-navigation a:hover {
-    background-color: #003b5c;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-/* Responsive Navigation Menu */
+/*
 @media (max-width: 768px) {
-    .main-navigation {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .main-navigation ul {
-        flex-direction: column;
-    }
-
-    .main-navigation a {
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-        background-color: #0073aa;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
-    .main-navigation.toggled .menu-toggle {
-        background-color: #003b5c;
-    }
-
-    .main-navigation.toggled ul {
-        display: block;
+    .archive .post {
+        width: 100%; /* Full width for smaller screens */
     }
 }
+/*
+.archive .entry-title {
+    font-size: 24px;
+    color: #0073aa;
+    margin: 0 0 10px;
+}
+
+.archive .entry-meta {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.archive .entry-content {
+    font-size: 16px;
+    color: #333;
+}
+*/
