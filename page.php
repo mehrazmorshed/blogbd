@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Bloggy
+ * @package BlogX
  * @since 1.0
  */
 

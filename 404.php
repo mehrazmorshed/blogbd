@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Bloggy
+ * @package BlogX
  * @since 1.0
  */
 
@@ -18,10 +18,10 @@ get_header();
         <main id="main" class="site-main">
             <section class="error-404 not-found">
                 <header class="page-header">
-                    <h1 class="page-title"><?php esc_html_e( 'Oops! That page can’t be found.', 'bloggy' ); ?></h1>
+                    <h1 class="page-title"><?php esc_html_e( 'Oops! That page can’t be found.', 'blogx' ); ?></h1>
                 </header><!-- .page-header -->
                 <div class="page-content">
-                    <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'bloggy' ); ?></p>
+                    <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'blogx' ); ?></p>
                     <?php get_search_form(); ?>
                 </div><!-- .page-content -->
             </section><!-- .error-404 -->
