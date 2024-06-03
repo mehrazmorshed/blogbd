@@ -351,6 +351,85 @@ input[type="submit"]:hover {
 
 
 
+/* Recommended WordPress CSS classes */
+
+/* .wp-caption and .wp-caption-text */
+.wp-caption {
+    max-width: 100%;
+    margin: 1em 0;
+    text-align: center;
+}
+.wp-caption-text {
+    font-size: 12px;
+    color: #777;
+}
+
+/* .sticky */
+.sticky {
+    border: 2px solid #0073aa;
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+/* .gallery-caption */
+.gallery-caption {
+    margin-top: 0.5em;
+    font-size: 12px;
+    color: #777;
+}
+
+/* .bypostauthor */
+.bypostauthor {
+    font-weight: bold;
+}
+
+/* .alignright */
+.alignright {
+    float: right;
+    margin-left: 1.5em;
+}
+
+/* .alignleft */
+.alignleft {
+    float: left;
+    margin-right: 1.5em;
+}
+
+/* .aligncenter */
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+
+
+/* .screen-reader-text */
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.screen-reader-text:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip: auto;
+}
+
+
+
 
 
 

@@ -44,6 +44,34 @@ if ( ! function_exists( 'blogbd_setup' ) ) :
             'default-image' => '',
         ) ) );
         add_theme_support( 'customize-selective-refresh-widgets' );
+
+        // Support for default block styles
+        add_theme_support( 'wp-block-styles' );
+
+        // Support for responsive embeds
+        add_theme_support( 'responsive-embeds' );
+
+        // Support for custom logo
+        add_theme_support( 'custom-logo', array(
+            'height'      => 100,
+            'width'       => 400,
+            'flex-height' => true,
+            'flex-width'  => true,
+        ) );
+
+        // Support for custom header
+        add_theme_support( 'custom-header', array(
+            'default-image'      => '',
+            'default-text-color' => '000000',
+            'width'              => 1000,
+            'height'             => 250,
+            'flex-width'         => true,
+            'flex-height'        => true,
+        ) );
+
+        // Support for wide alignment
+        add_theme_support( 'align-wide' );
+
     }
 endif;
 add_action( 'after_setup_theme', 'blogbd_setup' );
@@ -77,7 +105,7 @@ add_action( 'widgets_init', 'blogbd_widgets_init' );
  */
 function blogbd_scripts() {
     wp_enqueue_style( 'blogbd-style', get_stylesheet_uri() );
-    wp_enqueue_script( 'blogbd-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
+    wp_enqueue_script( 'blogbd-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'blogbd_scripts' );
 
@@ -97,3 +125,50 @@ add_image_size( 'blogbd-featured', 800, 400, true ); // 800 pixels wide by 400 p
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/sanitize.php';
+
+/**
+ * Register custom block styles
+ */
+function blogbd_register_block_styles() {
+    register_block_style(
+        'core/quote',
+        array(
+            'name'  => 'fancy-quote',
+            'label' => __( 'Fancy Quote', 'blogbd' ),
+        )
+    );
+}
+add_action( 'init', 'blogbd_register_block_styles' );
+
+/**
+ * Register custom block patterns
+ */
+function blogbd_register_block_patterns() {
+    register_block_pattern(
+        'blogbd/hero-section',
+        array(
+            'title'       => __( 'Hero Section', 'blogbd' ),
+            'description' => _x( 'A custom hero section with a background image and heading.', 'Block pattern description', 'blogbd' ),
+            'content'     => "<!-- wp:cover {\"url\":\"" . esc_url( get_template_directory_uri() ) . "/assets/hero.jpg\"} -->\n<div class=\"wp-block-cover\"><span aria-hidden=\"true\" class=\"wp-block-cover__background has-background-dim\"></span><div class=\"wp-block-cover__inner-container\"><!-- wp:heading {\"textAlign\":\"center\",\"level\":1} -->\n<h1 class=\"has-text-align-center\">Welcome to blogbd</h1>\n<!-- /wp:heading --></div></div>\n<!-- /wp:cover -->",
+        )
+    );
+}
+add_action( 'init', 'blogbd_register_block_patterns' );
+
+/**
+ * Add editor styles
+ */
+function blogbd_add_editor_styles() {
+    add_editor_style( 'assets/css/editor-style.css' );
+}
+add_action( 'admin_init', 'blogbd_add_editor_styles' );
+
+/**
+ * Enqueue the comment-reply script
+ */
+function blogbd_enqueue_comment_reply_script() {
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'blogbd_enqueue_comment_reply_script' );
