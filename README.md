@@ -1,2 +1,0 @@
-# bloggy
-WordPress Theme
