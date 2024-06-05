@@ -1,6 +1,6 @@
 /*
 Theme Name: BlogBD
-Theme URI: https://mehrazmorshed.com/themes/blogbd/
+Theme URI: https://mehrazmorshed.com/blogbd/
 Author: Mehraz Morshed
 Author URI: https://profiles.wordpress.org/mehrazmorshed/
 Description: A simple and elegant blog theme.
@@ -136,6 +136,10 @@ header.site-header h1 {
     padding-top: 10px;
     font-size: 14px;
     color: #777;
+}
+
+.entry-footer a{
+    text-decoration: underline;
 }
 
 /* Widget Area Styles */
@@ -410,6 +414,10 @@ nav {
 
 .main-navigation ul li {
     position: relative;
+}
+
+.main-navigation ul li:hover {
+    background-color: #4a4a4a;
 }
 
 .main-navigation ul li a {
