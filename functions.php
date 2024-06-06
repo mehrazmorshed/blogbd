@@ -107,7 +107,7 @@ function blogbd_scripts() {
     wp_enqueue_style( 'blogbd-style', get_stylesheet_uri() );
 
     // Enqueue Font Awesome
-    wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' );
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '1.0', 'all' );
 
     // Enqueue jQuery
     wp_enqueue_script( 'jquery' );
@@ -116,10 +116,6 @@ function blogbd_scripts() {
     wp_enqueue_script( 'blogbd-navigation', get_template_directory_uri() . '/assets/js/menu.js', array('jquery'), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'blogbd_scripts' );
-
-
-
-
 
 /**
  * Set default thumbnail size
@@ -184,34 +180,3 @@ function blogbd_enqueue_comment_reply_script() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'blogbd_enqueue_comment_reply_script' );
-
-
-
-
-
-
-
-
-/*
-
-// Check if the required plugin is installed and activated
-function check_required_plugin() {
-    // Replace 'plugin-directory/plugin-file.php' with the plugin's main file path
-    return is_plugin_active('hide-thumbnails/hide-thumbnails.php');
-}
-
-// Display admin notice if the required plugin is not installed/activated
-function show_admin_notice() {
-    // Replace 'plugin-directory/plugin-file.php' with the plugin's main file path
-    if (!check_required_plugin()) {
-        ?>
-        <div class="notice notice-warning is-dismissible">
-            <p><?php _e('This theme requires the "Hide Thumbnails" plugin to be installed and activated. Please install and activate it to use all the features of this theme.', 'text-domain'); ?></p>
-            <p><a href="<?php echo esc_url(admin_url('plugin-install.php?s=hide-thumbnails&tab=search&type=term')); ?>" class="button button-primary"><?php _e('Install Plugin', 'text-domain'); ?></a></p>
-        </div>
-        <?php
-    }
-}
-add_action('admin_notices', 'show_admin_notice');
-
-*/

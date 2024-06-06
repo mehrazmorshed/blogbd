@@ -1,10 +1,8 @@
 /*
 Theme Name: BlogBD
-Theme URI: https://mehrazmorshed.com/blogbd/
 Author: Mehraz Morshed
-Author URI: https://profiles.wordpress.org/mehrazmorshed/
 Description: A simple and elegant blog theme.
-Version: 1.0
+Version: 1.0.2
 Requires at least: 5.3
 Tested up to: 6.5
 Requires PHP: 5.3
@@ -37,6 +35,7 @@ a:hover {
 }
 
 /* Header Styles */
+
 header.site-header {
     background-color: #0073aa;
     color: #fff;/*
@@ -77,9 +76,8 @@ header.site-header h1 {
     color: #eee;
 }
 
-
-
 /* Contents */
+
 .site-content {
     display: flex;
     flex-direction: row;
@@ -143,6 +141,7 @@ header.site-header h1 {
 }
 
 /* Widget Area Styles */
+
 .widget-area .widget {
     margin-bottom: 20px;
 }
@@ -193,6 +192,7 @@ header.site-header h1 {
 }
 
 /* Footer Styles */
+
 footer.site-footer {
     background-color: #333;
     color: #fff;
@@ -211,6 +211,7 @@ footer.site-footer a:hover {
 }
 
 /* Button Styles */
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -232,6 +233,7 @@ input[type="submit"]:hover {
 }
 
 /* Responsive Design */
+
 @media (max-width: 768px) {
     .site-content {
         flex-direction: column;
@@ -245,6 +247,7 @@ input[type="submit"]:hover {
 }
 
 /* Featured Image Styles */
+
 .featured-image {
     max-width: 100%;
     height: auto;
@@ -254,6 +257,7 @@ input[type="submit"]:hover {
 }
 
 /* Recommended WordPress CSS classes */
+
 .wp-caption {
     max-width: 100%;
     margin: 1em 0;
@@ -316,8 +320,6 @@ input[type="submit"]:hover {
     clip: auto;
 }
 
-
-
 /* Archive Page Styles */
 
 .page-header {
@@ -336,56 +338,8 @@ input[type="submit"]:hover {
     color: #777;
     margin-top: 10px;
 }
-/*
-.archive .site-main {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 
-.archive .post {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 20px);
-}
-
-@media (max-width: 768px) {
-    .archive .post {
-        width: 100%;
-    }
-}
-
-.archive .entry-title {
-    font-size: 24px;
-    color: #0073aa;
-    margin: 0 0 10px;
-}
-
-.archive .entry-meta {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 10px;
-}
-
-.archive .entry-content {
-    font-size: 16px;
-    color: #333;
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
+/* Responsive navigation styles */
 
 nav {
     display: block;
@@ -393,10 +347,9 @@ nav {
     background-color: #333333;
 }
 
-/* Responsive navigation styles */
 .menu-toggle {
     display: none;
-    background: #333333;
+    background-color: #999999;
     color: #fff;
     padding: 10px 15px;
     border: none;
