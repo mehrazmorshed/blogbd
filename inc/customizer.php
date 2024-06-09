@@ -102,6 +102,7 @@ function blogbd_customize_css() {
     ?>
     <style type="text/css">
         a { color: <?php echo esc_attr( get_theme_mod( 'blogbd_link_color', '#0073aa' ) ); ?>; }
+        #secondary.widget-area ul li a { color: <?php echo esc_attr( get_theme_mod( 'blogbd_link_color', '#0073aa' ) ); ?>; }
         body { color: <?php echo esc_attr( get_theme_mod( 'blogbd_text_color', '#333333' ) ); ?>; }
         .site-header a { color: #<?php echo esc_attr( get_header_textcolor() ); ?>; }
         .site-header { 
