@@ -102,11 +102,11 @@ function blogbd_customize_css() {
     ?>
     <style type="text/css">
         a { color: <?php echo esc_attr( get_theme_mod( 'blogbd_link_color', '#0073aa' ) ); ?>; }
-        body { color: <?php echo get_theme_mod( 'blogbd_text_color', '#333333' ); ?>; }
-        .site-header a { color: #<?php echo get_header_textcolor(); ?>; }
+        body { color: <?php echo esc_attr( get_theme_mod( 'blogbd_text_color', '#333333' ) ); ?>; }
+        .site-header a { color: #<?php echo esc_attr( get_header_textcolor() ); ?>; }
         .site-header { 
-            background-color: <?php echo get_theme_mod( 'header_background_color', '#0073aa' ); ?>; 
-            color: #<?php echo get_header_textcolor(); ?>;
+            background-color: <?php echo esc_attr( get_theme_mod( 'header_background_color', '#ffffff' ) ); ?>;
+            color: #<?php echo esc_attr( get_header_textcolor() ); ?>;
         }
     </style>
     <?php
