@@ -180,3 +180,15 @@ function blogbd_enqueue_comment_reply_script() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'blogbd_enqueue_comment_reply_script' );
+
+function blogbd_custom_excerpt_length( $length ) {
+    $custom_excerpt_length = get_theme_mod( 'excerpt_length', 20 );
+    return $custom_excerpt_length;
+}
+add_filter( 'excerpt_length', 'blogbd_custom_excerpt_length', 999 );
+
+function blogbd_excerpt_more( $more ) {
+    $read_more_text = get_theme_mod( 'read_more_text', __( 'Read more', 'blogbd' ) );
+    return '... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . esc_html( $read_more_text ) . '</a>';
+}
+add_filter( 'excerpt_more', 'blogbd_excerpt_more' );

@@ -27,6 +27,45 @@ function blogbd_customize_register( $wp_customize ) {
         'section'    => 'blogbd_color_section',
         'settings'   => 'blogbd_link_color',
     ) ) );
+
+
+
+    // Add Excerpt Length Setting
+    $wp_customize->add_setting( 'excerpt_length', array(
+        'default'           => 20,
+        'sanitize_callback' => 'absint',
+    ) );
+
+    // Add Excerpt Length Control
+    $wp_customize->add_control( 'excerpt_length', array(
+        'label'       => __( 'Excerpt Length', 'blogbd' ),
+        'description' => __( 'Set the number of words for post excerpts.', 'blogbd' ),
+        'section'     => 'title_tagline', // You can add a new section or use an existing one
+        'type'        => 'number',
+        'input_attrs' => array(
+            'min' => 1,
+        ),
+    ) );
+
+    // Add Read More Text Setting
+    $wp_customize->add_setting( 'read_more_text', array(
+        'default'           => __( 'Read more', 'blogbd' ),
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    // Add Read More Text Control
+    $wp_customize->add_control( 'read_more_text', array(
+        'label'       => __( 'Read More Text', 'blogbd' ),
+        'description' => __( 'Set the text for the "Read more" link in excerpts.', 'blogbd' ),
+        'section'     => 'title_tagline', // You can add a new section or use an existing one
+        'type'        => 'text',
+    ) );
+
+
+
+
+
+
 }
 
 add_action( 'customize_register', 'blogbd_customize_register' );
