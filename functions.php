@@ -62,11 +62,12 @@ if ( ! function_exists( 'blogbd_setup' ) ) :
         // Support for custom header
         add_theme_support( 'custom-header', array(
             'default-image'      => '',
-            'default-text-color' => '000000',
+            'default-text-color' => 'ffffff',
             'width'              => 1000,
             'height'             => 250,
             'flex-width'         => true,
             'flex-height'        => true,
+            'header-text'        => true,
         ) );
 
         // Support for wide alignment
