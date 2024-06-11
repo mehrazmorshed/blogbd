@@ -350,7 +350,7 @@ nav {
 
 .menu-toggle {
     display: none;
-    background-color: #999999;
+    background-color: inherit;
     color: #fff;
     padding: 10px 15px;
     border: none;
