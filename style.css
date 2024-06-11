@@ -2,7 +2,7 @@
 Theme Name: BlogBD
 Author: Mehraz Morshed
 Description: A simple and elegant blog theme.
-Version: 1.0.6
+Version: 1.0.7
 Requires at least: 5.0
 Tested up to: 6.5
 Requires PHP: 7.0
@@ -15,6 +15,8 @@ Tags: custom-menu, custom-logo, entertainment, one-column, two-columns, right-si
 Screenshot image is a collage of actual sites created using the BlogBD WordPress Theme.
 
 */
+
+/* Global Styles */
 
 body {
     font-family: Arial, sans-serif;
@@ -625,4 +627,35 @@ nav {
 /* added later */
 p.comment-form-cookies-consent {
     display: none;
+}
+
+/* Pagination Styles */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    background-color: inherit;
+}
+
+.pagination .page-numbers {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    color: #0073aa;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .page-numbers:hover,
+.pagination .page-numbers.current {
+    background-color: #0073aa;
+    color: #fff;
+}
+
+.pagination .prev,
+.pagination .next {
+    font-weight: bold;
 }

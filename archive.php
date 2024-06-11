@@ -69,9 +69,15 @@ get_header();
 
         endwhile;
 
-        the_posts_navigation();
+        // pagination
 
-    else :
+        the_posts_pagination( array(
+            'mid_size'  => 2,
+            'prev_text' => __( 'Previous', 'blogbd' ),
+            'next_text' => __( 'Next', 'blogbd' ),
+        ) );
+ 
+        else :
 
         get_template_part( 'template-parts/content', 'none' );
 

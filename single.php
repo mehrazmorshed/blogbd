@@ -20,7 +20,7 @@ get_header();
         while ( have_posts() ) : the_post();
             get_template_part( 'template-parts/content', get_post_format() );
 
-            //the_post_navigation();
+            //the post navigation:
 
             if ( is_singular( 'post' ) ) {
                 // Previous/next post navigation.
@@ -34,7 +34,7 @@ get_header();
                 echo '<td class="next-post">';
                 next_post_link('%link', '<span class="">' . __( 'Next post >>', 'blogbd' ) . '</span> <span class="post-title">%title</span>');
                 echo '</td>';
-                
+
                 echo '</tr></table>';
                 echo '</div>';
             }
