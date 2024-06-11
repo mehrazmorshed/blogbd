@@ -50,8 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <nav id="site-navigation" class="main-navigation">
     <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-        <!--i class="fa-solid fa-house"></i-->
-        <img width="24" height="24" src="<?php echo get_template_directory_uri() . '/assets/images/home.png' ?>">
+        <img width="24" height="24" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/home.png'); ?>">
     </button>
     <?php
     wp_nav_menu( array(
