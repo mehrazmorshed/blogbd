@@ -48,18 +48,18 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php endif; ?>
             </div><!-- .site-branding -->
 
-<nav id="site-navigation" class="main-navigation">
-    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-        <img width="24" height="24" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/home.png'); ?>">
-    </button>
-    <?php
-    wp_nav_menu( array(
-        'theme_location' => 'primary',
-        'menu_id'        => 'primary-menu',
-        'menu_class'     => 'menu',
-    ) );
-    ?>
-</nav><!-- #site-navigation -->
+            <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Menu">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <img width="24" height="24" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/home.png'); ?>" alt="Menu">
+                </button>
+                <?php
+                wp_nav_menu( array(
+                    'theme_location' => 'primary',
+                    'menu_id'        => 'primary-menu',
+                    'menu_class'     => 'menu',
+                ) );
+                ?>
+            </nav><!-- #site-navigation -->
 
         </header><!-- #masthead -->
 

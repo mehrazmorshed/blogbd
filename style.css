@@ -2,7 +2,7 @@
 Theme Name: BlogBD
 Author: Mehraz Morshed
 Description: A simple and elegant blog theme.
-Version: 1.0.10
+Version: 1.0.11
 Requires at least: 5.0
 Tested up to: 6.5
 Requires PHP: 7.0
@@ -658,4 +658,60 @@ p.comment-form-cookies-consent {
 .pagination .prev,
 .pagination .next {
     font-weight: bold;
+}
+
+/* Submenu Keyboard Navigation Style */
+
+/* Default link styling */
+.menu a {
+    text-decoration: none;
+    color: #0073aa;
+}
+
+/* Focus state */
+.menu a:focus {
+    outline: 2px solid #005177;
+    background-color: #e0e0e0;
+}
+
+/* Sub-menu hidden by default */
+.menu .sub-menu {
+    display: none;
+}
+
+/* Show sub-menu when expanded */
+.menu .sub-menu[aria-expanded="true"] {
+    display: block;
+}
+
+/* Underline Link Style */
+
+/* Default link styling */
+a {
+    text-decoration: underline; /* Underline links by default */
+    color: #0073aa; /* Example link color */
+}
+
+/* Hover effect */
+a:hover,
+a:focus {
+    color: #005177; /* Darker color on hover/focus */
+    text-decoration: none; /* Optionally remove underline on hover/focus */
+}
+
+/* Ensure sufficient contrast */
+a {
+    color: #0073aa; /* Ensure link color has sufficient contrast with background */
+}
+
+/* Links within specific sections */
+.header a,
+.footer a {
+    text-decoration: none; /* Example: no underline in header/footer */
+}
+
+/* Additional hover effect for sections */
+.header a:hover,
+.footer a:hover {
+    text-decoration: underline; /* Underline on hover in header/footer */
 }

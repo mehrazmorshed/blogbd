@@ -105,6 +105,8 @@ add_action( 'widgets_init', 'blogbd_widgets_init' );
  * Enqueue css and js files
  */
 function blogbd_scripts() {
+
+    // Enqueue Default Theme Style
     wp_enqueue_style( 'blogbd-style', get_stylesheet_uri() );
 
     // Enqueue Font Awesome
@@ -113,8 +115,12 @@ function blogbd_scripts() {
     // Enqueue jQuery
     wp_enqueue_script( 'jquery' );
 
-    // Enqueue custom navigation script
+    // Enqueue Custom Navigation
     wp_enqueue_script( 'blogbd-navigation', get_template_directory_uri() . '/assets/js/menu.js', array('jquery'), '1.0', true );
+
+    // Enqueue Submenu Keyboard Navigation
+    wp_enqueue_script('blogbd-keyboard-navigation', get_template_directory_uri() . '/assets/js/blogbd-keyboard-navigation.js', array('jquery'), null, true);
+
 }
 add_action( 'wp_enqueue_scripts', 'blogbd_scripts' );
 
