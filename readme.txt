@@ -1,14 +1,15 @@
 === BlogBD ===
 Contributors: mehrazmorshed
-Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, theme-options, translation-ready, blog
-Requires at least: 5.0
-Tested up to: 6.5
-Stable tag: 1.0.12
+Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, theme-options, translation-ready, blog, entertainment, full-width-template, post-formats, rtl-language-support, threaded-comments, blog-theme, classic, classic-theme, clean, clean-theme
+Requires at least: 4.4
+Tested up to: 6.6
+Stable tag: 1.1.3
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-BlogBD is a simple, clean, and modern blog theme for WordPress. It is perfect for bloggers who want a stylish yet functional platform to share their content. BlogBD is fully customizable, compatible with Elementor page builder, and comes with various layout options and features.
+BlogBD is a classic WordPress theme designed specifically for bloggers who value simplicity and elegance. With its clean design and intuitive layout, BlogBD provides a seamless reading experience that keeps your content at the forefront.
 
 == Features ==
 * Responsive Design
