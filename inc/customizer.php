@@ -27,7 +27,7 @@ function blogbd_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_control( $wp_customize, 'header_background_color', array(
-        'label'    => __( 'Header Background Color', 'blogbd' ),
+        'label'    => __( 'Header Background', 'blogbd' ),
         'section'  => 'colors',
         'settings' => 'header_background_color',
     ) ) );
@@ -40,7 +40,7 @@ function blogbd_customize_register( $wp_customize ) {
         'sanitize_callback' => 'sanitize_hex_color',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'blogbd_link_color_control', array(
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'blogbd_link_color', array(
         'label'      => __( 'Link Color', 'blogbd' ),
         'section'    => 'colors',
         'settings'   => 'blogbd_link_color',
@@ -94,6 +94,27 @@ function blogbd_customize_register( $wp_customize ) {
         'type'        => 'text',
     ) );
 
+
+    // Add a new section for the footer text
+    $wp_customize->add_section( 'blogbd_footer_section', array(
+        'title'       => __( 'Footer Text', 'blogbd' ),
+        'priority'    => 130,
+    ) );
+
+    // Add the setting for the footer text
+    $wp_customize->add_setting( 'blogbd_footer_text', array(
+        'default'           => __( '<a href="https://wordpress.org/themes/blogbd/">BlogBD WordPress Theme</a>', 'blogbd' ),
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+
+    // Add the control for the footer text
+    $wp_customize->add_control( 'blogbd_footer_text', array(
+        'label'    => __( 'Footer Text', 'blogbd' ),
+        'section'  => 'blogbd_footer_section',
+        'type'     => 'text',
+    ) );
+
+
 }
 
 add_action( 'customize_register', 'blogbd_customize_register' );
@@ -103,10 +124,12 @@ function blogbd_customize_css() {
     <style type="text/css">
         a { color: <?php echo esc_attr( get_theme_mod( 'blogbd_link_color', '#0073aa' ) ); ?>; }
         #secondary.widget-area ul li a { color: <?php echo esc_attr( get_theme_mod( 'blogbd_link_color', '#0073aa' ) ); ?>; }
-        body { color: <?php echo esc_attr( get_theme_mod( 'blogbd_text_color', '#333333' ) ); ?>; }
-        .site-header a { color: #<?php echo esc_attr( get_header_textcolor() ); ?>; }
-        .site-header { 
-            background-color: <?php echo esc_attr( get_theme_mod( 'header_background_color', '#ffffff' ) ); ?>;
+        body { 
+            color: <?php echo esc_attr( get_theme_mod( 'blogbd_text_color', '#333333' ) ); ?>; 
+        }
+        header.site-header a { color: #<?php echo esc_attr( get_header_textcolor() ); ?>; }
+        header.site-header { 
+            background-color: <?php echo esc_attr( get_theme_mod( 'header_background_color', '#0073aa' ) ); ?>;
             color: #<?php echo esc_attr( get_header_textcolor() ); ?>;
         }
     </style>

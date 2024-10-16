@@ -3,7 +3,7 @@ Contributors: mehrazmorshed
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, theme-options, translation-ready, blog, entertainment, full-width-template, post-formats, rtl-language-support, threaded-comments, blog-theme, classic, classic-theme, clean, clean-theme
 Requires at least: 4.4
 Tested up to: 6.6
-Stable tag: 1.1.3
+Stable tag: 1.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

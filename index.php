@@ -21,7 +21,6 @@ get_header();
 ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
-            <hr>
             <?php
 
             if ( have_posts() ) :
@@ -33,9 +32,10 @@ get_header();
                 <?php
             endif;
 
+            echo '<div id="dotted"></div>';
             while ( have_posts() ) : the_post();
                 ?>
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <article class="dotted" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <header class="entry-header">
 
                         <?php
@@ -61,7 +61,6 @@ get_header();
                     </footer><!-- .entry-footer -->
 
                 </article><!-- #post-<?php the_ID(); ?> -->
-                <br><hr>
             <?php
             endwhile;
 

@@ -9,7 +9,6 @@
  * @since       BlogBD 1.0
  */
 
-
 if ( ! function_exists( 'blogbd_posted_on' ) ) :
     function blogbd_posted_on() {
         $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -47,24 +46,22 @@ if ( ! function_exists( 'blogbd_entry_footer' ) ) :
             $categories_list = get_the_category_list( esc_html__( ', ', 'blogbd' ) );
             if ( $categories_list && blogbd_categorized_blog() ) {
                 printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'blogbd' ) . '</span>', $categories_list );
+                echo '&nbsp; &nbsp; &nbsp;'; // blank space added
             }
 
             $tags_list = get_the_tag_list( '', esc_html__( ', ', 'blogbd' ) );
             if ( $tags_list ) {
-                echo '&nbsp; &nbsp; &nbsp;'; // blank space added
                 printf( '<span class="tags-links">' . esc_html__( 'Tags: %1$s', 'blogbd' ) . '</span>', $tags_list );
+                echo '&nbsp; &nbsp; &nbsp;'; // blank space added
             }
         }
-
-        echo '&nbsp; &nbsp; &nbsp;';
 
         if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
             echo '<span class="comments-link">';
             comments_popup_link( esc_html__( 'Leave a comment', 'blogbd' ), esc_html__( '1 Comment', 'blogbd' ), esc_html__( '% Comments', 'blogbd' ) );
             echo '</span>';
+            echo '&nbsp; &nbsp; &nbsp;'; // blank space added
         }
-
-        echo '&nbsp; &nbsp; &nbsp;';
 
         edit_post_link(
             sprintf(

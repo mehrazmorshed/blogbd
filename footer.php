@@ -16,13 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
     </div><!-- #content -->
-    <footer id="colophon" class="site-footer">
-        <div class="site-info">
-            <?php
-            printf( esc_html__( 'Proudly powered by %s', 'blogbd' ), '<a href="' . esc_url( __( 'https://wordpress.org/', 'blogbd' ) ) . '">WordPress</a>' );
-            ?>
-        </div><!-- .site-info -->
-    </footer><!-- #colophon -->
+<footer id="colophon" class="site-footer">
+    <div class="site-info">
+        <?php
+        $footer_text = get_theme_mod( 'blogbd_footer_text', __( '<a href="https://wordpress.org/themes/blogbd/">BlogBD WordPress Theme</a>', 'blogbd' ) );
+        echo wp_kses_post( $footer_text );
+        ?>
+    </div><!-- .site-info -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
 </body>

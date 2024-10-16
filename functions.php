@@ -8,8 +8,9 @@
  * @since 1.0
  */
 
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly.
+    exit;
 }
 
 /**
@@ -24,14 +25,21 @@ define( 'BLOGBD_THEME_URI', trailingslashit( esc_url( get_template_directory_uri
  * Register necessary features
  */
 if ( ! function_exists( 'blogbd_setup' ) ) :
+
     function blogbd_setup() {
+
         load_theme_textdomain( 'blogbd', get_template_directory() . '/languages' );
+
         add_theme_support( 'automatic-feed-links' );
+
         add_theme_support( 'title-tag' );
+
         add_theme_support( 'post-thumbnails' );
+
         register_nav_menus( array(
             'primary' => esc_html__( 'Primary Menu', 'blogbd' ),
         ) );
+
         add_theme_support( 'html5', array(
             'search-form',
             'comment-form',
@@ -39,10 +47,12 @@ if ( ! function_exists( 'blogbd_setup' ) ) :
             'gallery',
             'caption',
         ) );
+
         add_theme_support( 'custom-background', apply_filters( 'blogbd_custom_background_args', array(
-            'default-color' => 'ffffff',
+            'default-color' => 'dddddd',
             'default-image' => '',
         ) ) );
+
         add_theme_support( 'customize-selective-refresh-widgets' );
 
         // Support for default block styles
@@ -62,7 +72,7 @@ if ( ! function_exists( 'blogbd_setup' ) ) :
         // Support for custom header
         add_theme_support( 'custom-header', array(
             'default-image'      => '',
-            'default-text-color' => 'ffffff',
+            'default-text-color' => 'dddddd',
             'width'              => 1000,
             'height'             => 250,
             'flex-width'         => true,
@@ -74,7 +84,9 @@ if ( ! function_exists( 'blogbd_setup' ) ) :
         add_theme_support( 'align-wide' );
 
     }
+
 endif;
+
 add_action( 'after_setup_theme', 'blogbd_setup' );
 
 /**
@@ -83,6 +95,7 @@ add_action( 'after_setup_theme', 'blogbd_setup' );
 function blogbd_content_width() {
     $GLOBALS['content_width'] = apply_filters( 'blogbd_content_width', 640 );
 }
+
 add_action( 'after_setup_theme', 'blogbd_content_width', 0 );
 
 /**
@@ -99,6 +112,7 @@ function blogbd_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 }
+
 add_action( 'widgets_init', 'blogbd_widgets_init' );
 
 /**
@@ -120,8 +134,8 @@ function blogbd_scripts() {
 
     // Enqueue Submenu Keyboard Navigation
     wp_enqueue_script('blogbd-keyboard-navigation', get_template_directory_uri() . '/assets/js/blogbd-keyboard-navigation.js', array('jquery'), null, true);
-
 }
+
 add_action( 'wp_enqueue_scripts', 'blogbd_scripts' );
 
 /**
@@ -164,10 +178,11 @@ function blogbd_register_block_patterns() {
         array(
             'title'       => __( 'Hero Section', 'blogbd' ),
             'description' => _x( 'A custom hero section with a background image and heading.', 'Block pattern description', 'blogbd' ),
-            'content'     => "<!-- wp:cover {\"url\":\"" . esc_url( get_template_directory_uri() ) . "/assets/hero.jpg\"} -->\n<div class=\"wp-block-cover\"><span aria-hidden=\"true\" class=\"wp-block-cover__background has-background-dim\"></span><div class=\"wp-block-cover__inner-container\"><!-- wp:heading {\"textAlign\":\"center\",\"level\":1} -->\n<h1 class=\"has-text-align-center\">Welcome to blogbd</h1>\n<!-- /wp:heading --></div></div>\n<!-- /wp:cover -->",
+            'content'     => "<!-- wp:cover {\"url\":\"" . esc_url( get_template_directory_uri() ) . "/assets/images/hero.jpg\"} -->\n<div class=\"wp-block-cover\"><span aria-hidden=\"true\" class=\"wp-block-cover__background has-background-dim\"></span><div class=\"wp-block-cover__inner-container\"><!-- wp:heading {\"textAlign\":\"center\",\"level\":1} -->\n<h1 class=\"has-text-align-center\">Welcome to BlogBD</h1>\n<!-- /wp:heading --></div></div>\n<!-- /wp:cover -->",
         )
     );
 }
+
 add_action( 'init', 'blogbd_register_block_patterns' );
 
 /**
@@ -176,6 +191,7 @@ add_action( 'init', 'blogbd_register_block_patterns' );
 function blogbd_add_editor_styles() {
     add_editor_style( 'assets/css/editor-style.css' );
 }
+
 add_action( 'admin_init', 'blogbd_add_editor_styles' );
 
 /**
@@ -186,16 +202,87 @@ function blogbd_enqueue_comment_reply_script() {
         wp_enqueue_script( 'comment-reply' );
     }
 }
+
 add_action( 'wp_enqueue_scripts', 'blogbd_enqueue_comment_reply_script' );
 
 function blogbd_custom_excerpt_length( $length ) {
     $custom_excerpt_length = get_theme_mod( 'excerpt_length', 20 );
     return $custom_excerpt_length;
 }
+
 add_filter( 'excerpt_length', 'blogbd_custom_excerpt_length', 999 );
 
 function blogbd_excerpt_more( $more ) {
     $read_more_text = get_theme_mod( 'read_more_text', __( 'Read more', 'blogbd' ) );
     return '... <a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . esc_html( $read_more_text ) . '</a>';
 }
+
 add_filter( 'excerpt_more', 'blogbd_excerpt_more' );
+
+
+/* Since v1.2 */
+
+// Hook to admin_notices to display the messages
+add_action( 'admin_notices', 'blogbd_recommended_plugins' );
+
+function blogbd_recommended_plugins() {
+    // Include necessary plugin functions
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+    $plugin_file = 'tap-to-top/tap-to-top.php';
+
+    // Check if the plugin is installed
+    $is_installed = file_exists( WP_PLUGIN_DIR . '/' . $plugin_file );
+
+    // Check if the plugin is active
+    $is_active = is_plugin_active( $plugin_file );
+
+    // Display "Install Now" notice if the plugin is not installed
+    if ( !$is_installed ) {
+        $plugin_slug = 'tap-to-top';
+        $install_url = wp_nonce_url(
+            self_admin_url( 'update.php?action=install-plugin&plugin=' . $plugin_slug ),
+            'install-plugin_' . $plugin_slug
+        );
+        ?>
+        <div class="notice notice-info is-dismissible">
+            <p>
+                <?php _e( 'We recommend installing the "Tap to Top" plugin to enhance your theme experience.', 'blogbd' ); ?>
+            </p>
+            <p>
+                <a href="<?php echo esc_url( $install_url ); ?>" class="button button-primary">
+                    <?php _e( 'Install Now', 'blogbd' ); ?>
+                </a>
+            </p>
+        </div>
+        <?php
+    }
+
+    // Display "Activate Now" notice if the plugin is installed but not activated
+    elseif ( !$is_active ) {
+        $activate_url = wp_nonce_url(
+            self_admin_url( 'plugins.php?action=activate&plugin=' . $plugin_file ),
+            'activate-plugin_' . $plugin_file
+        );
+        ?>
+        <div class="notice notice-warning is-dismissible">
+            <p>
+                <?php _e( 'The "Tap to Top" plugin is installed but not active. Please activate it to enhance your theme experience.', 'blogbd' ); ?>
+            </p>
+            <p>
+                <a href="<?php echo esc_url( $activate_url ); ?>" class="button button-primary">
+                    <?php _e( 'Activate Now', 'blogbd' ); ?>
+                </a>
+            </p>
+        </div>
+        <?php
+    }
+}
+
+// Enqueue script to handle plugin installation and activation
+add_action( 'admin_enqueue_scripts', 'blogbd_plugins_enqueue_script' );
+function blogbd_plugins_enqueue_script() {
+    // Include the WordPress plugin installer script
+    wp_enqueue_script( 'plugin-install' );
+    wp_enqueue_script( 'updates' );
+}
